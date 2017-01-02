@@ -8,3 +8,5 @@ Code van Wibren als basis gebruikt.
 
 Verzuim van Leerlingen in lessen berekenen:
 3 Resources: Location, Aanwezigheden, Droneid
+
+Ga dus ook Mongoose gebruiken voor versimpeling van MongoDB usage
