@@ -1,6 +1,25 @@
+var mongoose = require("mongoose");
+var LocationSchema = mongoose.Schema({
+  id:{
+    type: Number
+  }
+stad:{
+  type: String
+}
+naam:{
+type: String
+}
+
+
+
+});
+var Locatie = mongoose.model('Locations',LocationSchema)
+
+
+
 module.exports =  {
   Locations : {},
-  
+
   saveLocation : function(Location){
     this.Locations[Location.id]= Location;
   },
