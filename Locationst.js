@@ -11,14 +11,17 @@ type: String
 }
 
 
-
+// Schema & Model http://mongoosejs.com/docs/guide.html
 });
 var Locatie = mongoose.model('Locations',LocationSchema)
 
 
 
 module.exports =  {
-  Locations : {},
+  //https://docs.mongodb.com/manual/reference/method/db.collection.find/
+  listAllLocations: function (callback) {
+      Locatie.find(callback);
+  },
 
   saveLocation : function(Location){
     this.Locations[Location.id]= Location;
