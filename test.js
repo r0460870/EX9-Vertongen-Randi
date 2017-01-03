@@ -46,7 +46,19 @@ app.post("/locations",function(req,res){
 app.put("/locations/:locid",function(req,res){
   // verdergaand op locid omdat hierop check moet uitgevoerd worden.
     var Locatie = new Location(req.body.locid,req.body.naam,req.body.stad);
-    dalLocations.updateLocation(req.params.locid
+    dalLocations.updateLocation(req.params.locid, Locatie,function(err,locatie){
+    // Eerste locatieid die overeenkomt met req.params.locid wordt vervangen door de nieuwe Locatie variabele.
+    //req.params
+//This property is an object containing properties mapped to the
+// named route “parameters”. For example, if you have the route /user/:name,
+//then the “name” property is available as req.params.name.
+//This object defaults to {}.
+// hier is .params dus locations
+        if (err) {
+          console.log (err);
+        }
+      res.send(locatie);
+    }
 }
 app.listen(3000);
 console.log("start");
