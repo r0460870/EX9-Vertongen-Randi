@@ -29,4 +29,7 @@ module.exports =  {
   findAanwezigheid: function(naam,callback){
   aanwezigheid.find({naam: naam},callback )
   }
+  CreateAanwezigheid: function(aanwezigheid,callback){
+  aanwezigheid.create(aanwezigheid,callback)
+  }
 };
