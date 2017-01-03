@@ -24,9 +24,9 @@ var aanwezigheid = mongoose.model('aanwezigheden',AanwezigheidSchema);
 module.exports =  {
 
   listAllAanwezigheden: function(callback){
-    aanwezigheden.find(callback);
+    aanwezigheid.find(callback);
   },
-  findAanwezigheid : function(id){
-    return this.Aanwezigheden[id];
+  findAanwezigheid: function(naam,callback){
+  aanwezigheid.find({naam: naam},callback )
   }
 };

@@ -22,7 +22,7 @@ app.get("/locations",function( req,res){
         res.send(locations);
         res.send('testloc');
 
-  // response --> alle locaties worden gestuurd via send kunnen ook bijvoorbeeld console.loges meegegeven worden
+  // response --> alle locaties worden gestuurd via send kunnen ook bijvoorbeeld tekstconfirmaties meegegeven worden
     });
 });
 
@@ -70,5 +70,10 @@ dalAanwezigheden.ListAllAanwezigheden(function(err,aanwezigheden){
     response.send(aanwezigheden);
 });
 });
+
+app.get("aanwezigheden/:naam", function( req, res) {
+dalAanwezigheden.findAanwezigheid(req.params.naam,function(err,aanwezigheid))
+
+})
 app.listen(3000);
 console.log("start");
