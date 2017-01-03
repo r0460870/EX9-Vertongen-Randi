@@ -58,7 +58,7 @@ app.put("/locations/:locid",function(req,res){
           console.log (err);
         }
       res.send(locatie);
-    }
-}
+    });
+});
 app.listen(3000);
 console.log("start");
