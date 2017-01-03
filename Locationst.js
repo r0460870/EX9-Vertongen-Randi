@@ -2,10 +2,10 @@ var mongoose = require("mongoose");
 var LocationSchema = mongoose.Schema({
   locid:{
     type: Number
-  }
+  },
 stad:{
   type: String
-}
+},
 naam:{
 type: String
 }
