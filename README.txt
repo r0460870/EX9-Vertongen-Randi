@@ -22,3 +22,6 @@ Mongod.exe geeft connectie met server weer, maar niet veel meer, ben nu eraan aa
 
 
 Aanwezigheden --> benamingen lijken hard op elkaar --> aandachtspunt , wss hier wel een fout of 2 erbij in.
+
+
+-- Verder gaan --> opstarten Mongod. Resource aanwezigheden verder werken
