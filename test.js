@@ -15,7 +15,7 @@ var app = express();
 
 app.use(parser.json());
 app.get("/locations",function( req,res){
-    dalLocations.listAllLocations(function (err,Locations){
+    dalLocations.listAllLocations(function (err,locations){
         if (err){
             throw err;
         }
@@ -72,8 +72,13 @@ dalAanwezigheden.ListAllAanwezigheden(function(err,aanwezigheden){
 });
 
 app.get("aanwezigheden/:naam", function( req, res) {
-dalAanwezigheden.findAanwezigheid(req.params.naam,function(err,aanwezigheid))
+    dalAanwezigheden.findAanwezigheid(req.params.naam,function(err,aanwezigheid){
+    if (err) {
+      throw err;
+    }
+    response.send(location);
+  });
 
-})
+});
 app.listen(3000);
 console.log("start");
