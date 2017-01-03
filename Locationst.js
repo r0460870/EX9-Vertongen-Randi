@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 var LocationSchema = mongoose.Schema({
-  id:{
+  locid:{
     type: Number
   }
 stad:{
@@ -23,17 +23,17 @@ module.exports =  {
       Locatie.find(callback);
   },
 
-  saveLocation : function(Location){
-    this.Locations[Location.id]= Location;
-  },
-  listAllLocations : function(){
-    var rtnValue =[];
-    for (var item in this.Locations) {
-      rtnValue.push(this.Locations[item]);
-    };
-    return rtnValue;
-  },
-  findLocations : function(id){
-    return this.Locations[id];
+  findLocation: function(stad,callback){
+Locatie.find({stad: stad},callback )
+// Waar stad = stad --> callback van documenten die hiermee overeenkomen. Dus vinden van locatie
   }
+  createLocation: function (locatie, callback) {
+      Locatie.create(locatie, callback);
+
+  },
+  updateLocation: function (id, newloc, callback) {
+      Locatie.findOneAndUpdate({locid: id}, newloc, callback);
+      // mongodb functie -->https://docs.mongodb.com/v3.2/reference/method/db.collection.findOneAndUpdate/
+      // Zoekt het eerste document dat overeenkomst met criteria ( in deze case: locatieid = id)
+      // en newloc is nieuwe locatie -informatie
 };
