@@ -13,7 +13,7 @@ type: String
 
 // Schema & Model http://mongoosejs.com/docs/guide.html
 });
-var Locatie = mongoose.model('Locations',LocationSchema)
+var Locatie = mongoose.model('Locations',LocationSchema);
 
 
 
@@ -29,11 +29,11 @@ Locatie.find({stad: stad},callback )
   }
   createLocation: function (locatie, callback) {
       Locatie.create(locatie, callback);
-
   },
   updateLocation: function (id, newloc, callback) {
       Locatie.findOneAndUpdate({locid: id}, newloc, callback);
       // mongodb functie -->https://docs.mongodb.com/v3.2/reference/method/db.collection.findOneAndUpdate/
       // Zoekt het eerste document dat overeenkomst met criteria ( in deze case: locatieid = id)
       // en newloc is nieuwe locatie -informatie
+};
 };
