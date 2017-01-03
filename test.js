@@ -60,5 +60,15 @@ app.put("/locations/:locid",function(req,res){
       res.send(locatie);
     });
 });
+//Aanwezigheden
+
+app.get("/aanwezigheden", function(req,res){
+dalAanwezigheden.ListAllAanwezigheden(function(err,aanwezigheden){
+    if(err){
+      throw err;
+    }
+    response.send(aanwezigheden);
+});
+});
 app.listen(3000);
 console.log("start");

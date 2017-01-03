@@ -22,17 +22,9 @@ var aanwezigheid = mongoose.model('aanwezigheden',AanwezigheidSchema);
 
 
 module.exports =  {
-  Aanwezigheden : {},
 
-  saveAanwezigheid : function(Aanwezigheid){
-    this.Aanwezigheden[Aanwezigheid.id]= Aanwezigheid;
-  },
-  listAllAanwezigheden : function(){
-    var rtnValue =[];
-    for (var item in this.Aanwezigheden) {
-      rtnValue.push(this.Aanwezigheden[item]);
-    };
-    return rtnValue;
+  listAllAanwezigheden: function(callback){
+    aanwezigheden.find(callback);
   },
   findAanwezigheid : function(id){
     return this.Aanwezigheden[id];
