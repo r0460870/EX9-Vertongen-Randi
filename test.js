@@ -2,7 +2,7 @@ var express = require("express");
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
 var dalLocations = require("./Locationst.js")
-var dalAanwezigheden= require("./Aanwezighedenst.js")
+//var dalAanwezigheden= require("./Aanwezighedenst.js")
 // var daldroneid = require (./Droneid.js") Laten we nog even achterwege.
 
 

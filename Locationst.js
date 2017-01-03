@@ -26,7 +26,7 @@ module.exports =  {
   findLocation: function(stad,callback){
 Locatie.find({stad: stad},callback )
 // Waar stad = stad --> callback van documenten die hiermee overeenkomen. Dus vinden van locatie
-  }
+  },
   createLocation: function (locatie, callback) {
       Locatie.create(locatie, callback);
   },
@@ -35,5 +35,5 @@ Locatie.find({stad: stad},callback )
       // mongodb functie -->https://docs.mongodb.com/v3.2/reference/method/db.collection.findOneAndUpdate/
       // Zoekt het eerste document dat overeenkomst met criteria ( in deze case: locatieid = id)
       // en newloc is nieuwe locatie -informatie
-};
+}
 };
