@@ -19,3 +19,6 @@ Extra info zetten en alles per deel en in het geheel begrijpen is hoofd pijler d
 --> verdergaand --> aanwezigheden erin krijgen.
 
 Mongod.exe geeft connectie met server weer, maar niet veel meer, ben nu eraan aan het werken, ookal krijg ik niet al tes veel resultaat, zolang de errors er maar uit zijn.
+
+
+Aanwezigheden --> benamingen lijken hard op elkaar --> aandachtspunt , wss hier wel een fout of 2 erbij in.
