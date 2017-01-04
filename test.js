@@ -82,7 +82,7 @@ app.get("aanwezigheden/:naam", function( req, res) {
 
 });
 
-var Aanwezigheid = function (aanwid,naam,){
+var Aanwezigheid = function (aanwid,naam){
     this.aanwid = aanwid;
     this.naam = naam;
     // dit word gezet zodat deze kan worden aangeroepen bij post en put om nieuwe waarde in te zetten
@@ -105,9 +105,8 @@ app.put("/aanwezigheid/:aanwid", function(req,res){
           throw err
         }
         response.send(aanw)
-    
-  });
 
+  });
 
 });
 

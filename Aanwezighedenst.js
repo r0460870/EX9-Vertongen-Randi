@@ -28,10 +28,10 @@ module.exports =  {
   },
   findAanwezigheid: function(naam,callback){
   aanwezigheid.find({naam: naam},callback )
-  }
+},
   CreateAanwezigheid: function(aanwezigheid,callback){
   aanwezigheid.create(aanwezigheid,callback)
-  }
+},
   UpdateAanwezigheid: function(id,newaanwezigheid,callback){
   aanwezigheid.findOneAndUpdate({aanwid: id},newaanwezigheid,callback)
   }
