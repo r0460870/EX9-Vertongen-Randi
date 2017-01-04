@@ -32,4 +32,7 @@ module.exports =  {
   CreateAanwezigheid: function(aanwezigheid,callback){
   aanwezigheid.create(aanwezigheid,callback)
   }
+  UpdateAanwezigheid: function(id,newaanwezigheid,callback){
+  aanwezigheid.findOneAndUpdate({aanwid: id},newaanwezigheid,callback)
+  }
 };

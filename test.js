@@ -5,7 +5,7 @@ mongoose.connect('mongodb://localhost/test');
 var dalLocations = require("./Locationst.js")
 //var dalAanwezigheden= require("./Aanwezighedenst.js")
 // var daldroneid = require (./Droneid.js") Laten we nog even achterwege.
-
+var dalAanwezigheden = require("./Aanwezighedenst.js")
 
 var app = express();
 // https://expressjs.com/en/guide/routing.html
@@ -30,6 +30,7 @@ var Location = function (locid,naam,stad){
   this.locid = locid;
   this.naam = naam;
   this.stad = stad;
+  // dit word gezet zodat deze kan worden aangeroepen bij post en put om nieuwe waarde in te zetten
 };
 app.post("/locations",function(req,res){
 //req.body holds parameters that are sent up from the client as part of a POST request
@@ -80,5 +81,35 @@ app.get("aanwezigheden/:naam", function( req, res) {
   });
 
 });
+
+var Aanwezigheid = function (aanwid,naam,){
+    this.aanwid = aanwid;
+    this.naam = naam;
+    // dit word gezet zodat deze kan worden aangeroepen bij post en put om nieuwe waarde in te zetten
+};
+app.post("/aanwezigheid", function(req,res){
+    var aanwezigheid = new Aanwezigheid(req.body.aanwid,req.body.naam)
+    dalAanwezigheden.CreateAanwezigheid(aanwezigheid,function(err,aanw){
+    // Functie van aanwezighedenst oproeepen
+        if (err){
+        throw err;
+        }
+      response.send(aanw);
+    });
+});
+
+app.put("/aanwezigheid/:aanwid", function(req,res){
+    var aanwezigheid = new Aanwezigheid(req.params.aanwid,req.body.naam);
+    dalAanwezigheden.UpdateAanwezigheid(request.params.aanwid,aanwezigheid,function(err,aanw){
+        if (err){
+          throw err
+        }
+        response.send(aanw)
+    
+  });
+
+
+});
+
 app.listen(3000);
 console.log("start");
